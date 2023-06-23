@@ -1,8 +1,3 @@
-# .github/workflows/main.yml
-
-# Тут задачи тестирования и сборки образа
-# ...
-# Добавляем новую задачу: деплой приложения
 build_and_push_to_docker_hub:
     name: Push Docker image to DockerHub
     runs-on: ubuntu-latest
@@ -19,7 +14,7 @@ build_and_push_to_docker_hub:
         uses: docker/login-action@v2
         # При помощи with передаём в action параметры username и password
         with:
-          username: <ваш_username_docker_hub> 
+          username: 
           password: <ваш_пароль_docker_hub>
           # Хорошо ли держать логин и пароль прямо в коде workflow?
           # Нет, это нехорошо
@@ -37,4 +32,4 @@ build_and_push_to_docker_hub:
           # Для каждого пересобранного образа 
           # устанавливаем тег latest, чтобы потом
           # на сервере и в docker-compose.yml не указывать версию
-          tags: ваш-логин-на-docker-hub/taski_backend:latests
+          tags: jennioi/taski_backend:latests
